@@ -10,11 +10,15 @@
 
 <table id="t1">
 
-    <caption>weltec vadodara</caption>
+    <tr>
+        <th>Name</th>
+
+  <th>desc</th>
+    </tr>
 
 </table>
 
-<table id="t2">
+<table id="category">
 
       <caption>weltec ahmedabad</caption>
 
@@ -33,10 +37,26 @@
 $(document).ready(function(){
 
 
-      $("#t1").click(function(){
+    
 
-          alert("This is click of table")
-      });
+           $("#category").DataTable({
+                "ajax": {
+                    "url": "/DisplayData/GetData",
+                    "type": "GET",
+                    "datatype": "json"
+                },
+                "columns": [
+                    { "data": "categoryName" },
+                    { "data": "description" },
+                   
+
+                ],
+                "language": {
+
+                    "emptyTable": "No data found"
+                }
+            });
+     
 });
 
 

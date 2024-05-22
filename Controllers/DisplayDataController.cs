@@ -9,7 +9,7 @@ namespace WeltecAdmin.Controllers
             NORTHWNDContext nORTHWNDContext = new NORTHWNDContext();    
 
             var cat = nORTHWNDContext.Categories.ToList();
-            return Json(cat);
+            return Json(new { data = cat });
         }
 
         public IActionResult Index()
